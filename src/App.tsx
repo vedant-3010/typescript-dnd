@@ -1,11 +1,28 @@
-import React from 'react'
+import React, { useState } from "react";
+import "./App.css";
+import InputFeild from "./components/InputField";
+import TodoList from "./components/TodoList";
+import { Todo } from "./models/models";
 
 const App: React.FC = () => {
-  return (
-    <div className=''>
-      
-    </div>
-  )
-}
+  const [todo, setTodo] = useState<string>("");
+  const [todos, setTodos] = useState<Todo[]>([]);
 
-export default App
+  const handleAdd = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (todo) {
+      setTodos([...todos, { id: Date.now(), todo, isDone: false }]);
+      setTodo("");
+    }
+  };
+
+  return (
+    <div className="App">
+      <span className="heading">Taskify</span>
+      <InputFeild todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+    </div>
+  );
+};
+
+export default App;
