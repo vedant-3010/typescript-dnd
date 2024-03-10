@@ -1,46 +1,69 @@
-# Getting Started with Create React App
+# Task-Type-DND
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Task-Type-DND is a simple web application built using React and React Beautiful DND (Drag and Drop) library. It allows users to manage their tasks by dragging and dropping them between different categories (Active Tasks and Completed Tasks).
 
-## Available Scripts
+## Screenshots
+<img width="960" alt="image" src="https://github.com/vedant-3010/typescript-dnd/assets/92071471/b21d268f-7d5e-4831-9815-873379931008">
 
-In the project directory, you can run:
+<img width="960" alt="image" src="https://github.com/vedant-3010/typescript-dnd/assets/92071471/7248558a-a7e6-489c-a023-c7ab57f61506">
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Add new tasks:** Users can add new tasks by typing into the input field and pressing the "Add" button.
+- **Mark tasks as completed:** Tasks can be marked as completed by clicking on the checkbox icon.
+- **Edit tasks:** Users can edit the task text by clicking on the edit icon, making changes, and pressing Enter.
+- **Delete tasks:** Tasks can be deleted by clicking on the delete icon.
+- **Drag and drop functionality:** Tasks can be rearranged between the "Active Tasks" and "Completed Tasks" sections using drag and drop.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+To run this project locally, follow these steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone this repository to your local machine.
+   ```bash
+   git clone <repository-url>
+   ```
+2. Navigate to the project directory.
+   ```bash
+   cd task-type-dnd
+   ```
+3. Install dependencies using npm or yarn.
+   ```bash
+   npm install
+   ```
+4. Start the development server.
+   ```bash
+   npm start
+   ```
+   
+6. Open your web browser and visit `http://localhost:3000` to view the application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React: JavaScript library for building user interfaces.
+- React Beautiful DND: Drag and Drop library for React.
+- TypeScript: Typed superset of JavaScript.
+- HTML/CSS: Markup and styling languages for web development.
 
-### `npm run eject`
+## Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- `src/components`: Contains React components used in the application.
+- `src/models`: Contains TypeScript interfaces used to define data structures.
+- `src/styles.css`: Contains global styles for the application.
+- `src/App.tsx`: Main entry point of the application.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Contributions to this project are welcome! To contribute:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Fork this repository.
+2. Create a new branch for your feature or fix.
+3. Make your changes and commit them.
+4. Push your changes to your fork.
+5. Submit a pull request.
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is licensed under the MIT License. See the `LICENSE` file for details.
