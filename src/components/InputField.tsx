@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import "./styles.css";
+import { IoIosAddCircleOutline } from "react-icons/io";
 
 interface props {
   todo: string;
@@ -27,7 +28,7 @@ const InputFeild: React.FC<props> = ({ todo, setTodo, handleAdd }) => {
         className="input__box"
       />
       <button type="submit" className="input_submit">
-        GO
+        <IoIosAddCircleOutline className="logo" />
       </button>
     </form>
   );
