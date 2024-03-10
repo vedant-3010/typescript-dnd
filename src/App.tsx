@@ -19,17 +19,58 @@ const App: React.FC = () => {
     }
   };
 
+  const onDragEnd = (result: DropResult) => {
+    const { destination, source } = result;
+
+    console.log(result);
+
+    if (!destination) {
+      return;
+    }
+
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
+      return;
+    }
+
+    let add;
+    let active = todos;
+    let complete = CompletedTodos;
+    
+
+    if (source.droppableId === "TodosList") {
+      add = active[source.index];
+      active.splice(source.index, 1);
+    } else {
+      add = complete[source.index];
+      complete.splice(source.index, 1);
+    }
+
+    if (destination.droppableId === "TodosList") {
+      active.splice(destination.index, 0, add);
+    } else {
+      complete.splice(destination.index, 0, add);
+    }
+
+    setCompletedTodos(complete);
+    setTodos(active);
+  };
+
   return (
-    <div className="App">
-      <span className="heading">Task-Type-Dnd</span>
-      <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-      <TodoList
-        todos={todos}
-        setTodos={setTodos}
-        CompletedTodos={CompletedTodos}
-        setCompletedTodos={setCompletedTodos}
-      />
-    </div>
+    <DragDropContext onDragEnd={onDragEnd}>
+      <div className="App">
+        <span className="heading">Task-Type-DND</span>
+        <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+        <TodoList
+          todos={todos}
+          setTodos={setTodos}
+          CompletedTodos={CompletedTodos}
+          setCompletedTodos={setCompletedTodos}
+        />
+      </div>
+    </DragDropContext>
   );
 };
 
